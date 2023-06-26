@@ -1,54 +1,58 @@
+<div class="container mt-4">
+  <div class="card">
+    <h1>Estudantes Cadastrados</h1>
+    <table class="table">
+      <thead>
+        <h1 *ngIf="!isResultLoaded">Loading...</h1>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Curso</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let studentItem of StudentArray; let i = index">
+          <tr [ngStyle]="{ 'animation-delay': i * 0.2 + 's' }" class="slideRight text-center">
+            <td>{{ studentItem.id }}</td>
+            <td>{{ studentItem.stname }}</td>
+            <td>{{ studentItem.course }}</td>
+            <td>{{ studentItem.fee }}</td>
+            <td>
+              <i (click)="setUpdate(studentItem)" class="btn btn-success icon fas fa-edit"></i>
+              <i (click)="setDelete(studentItem)" class="btn btn-danger icon fa fa-trash"></i>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <ng-container *ngIf="isEditInputsVisible">
+      <div class="editInputs">
+        <form>
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" [(ngModel)]="stname" [ngModelOptions]="{ standalone: true }" class="form-control"
+              id="stname" placeholder="Enter Name">
+          </div>
 
+          <div class="form-group">
+            <label>Curso</label>
+            <input type="text" [(ngModel)]="course" [ngModelOptions]="{ standalone: true }" class="form-control"
+              id="course" placeholder="Enter Course">
+          </div>
 
-    <div class="container mt-4">
-        <h1>Estudantes Cadastrados</h1>
-        <table class="table">
-          <thead>
-            <h1 *ngIf="!isResultLoaded">Loading...</h1>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Student Name</th>
-              <th scope="col">Course</th>
-              <th scope="col">Fee</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let studentItem of StudentArray">
-              <td>{{ studentItem.id }}</td>
-              <td>{{ studentItem.stname }}</td>
-              <td>{{ studentItem.course }}</td>
-              <td>{{ studentItem.fee }}</td>
-              <td>
-                <i (click)="setUpdate(studentItem)" class=" btn btn-success fas fa-edit"></i>
-                <i (click)="setDelete(studentItem)" class="btn btn-danger fa fa-trash"></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="form-group">
+            <label>Taxa</label>
+            <input type="text" [(ngModel)]="fee" [ngModelOptions]="{ standalone: true }" class="form-control"
+              id="fee" placeholder="Enter Fee">
+          </div>
 
-        <ng-container *ngIf="isEditInputsVisible">
-            <div class="editInputs">
-                <form>
-                    <div class="form-group">
-                    <label>Student Name</label>
-                    <input type="text" [(ngModel)]="stname" [ngModelOptions]="{ standalone: true }" class="form-control" id="stname" placeholder="Enter Name">
-                    </div>
-            
-                    <div class="form-group">
-                    <label>Course</label>
-                    <input type="text" [(ngModel)]="course" [ngModelOptions]="{ standalone: true }" class="form-control" id="course" placeholder="Enter Course">
-                    </div>
-            
-                    <div class="form-group">
-                    <label>Fee</label>
-                    <input type="text" [(ngModel)]="fee" [ngModelOptions]="{ standalone: true }" class="form-control" id="fee" placeholder="Enter Fee">
-                    </div>
-            
-                    <button type="submit" class="btn btn-primary mt-4" (click)="save()">Save</button>
+          <button type="submit" class="btn btn-primary mt-2 mb-2" (click)="save()">Salvar</button
+>
                 </form>
             </div>
         </ng-container>
-        
-        <button type="submit" class="btn btn-secondary mt-4" routerLink="/home">Voltar</button>
+        <button type="submit" class="btn btn-secondary mb-2" routerLink="/home">Voltar</button>
       </div>
+    </div>

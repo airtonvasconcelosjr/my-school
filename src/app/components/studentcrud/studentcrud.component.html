@@ -1,24 +1,24 @@
-<div class="container mt-4">
+<div class="container">
     <div class="card">
-      <h1>Student Registration</h1>
+      <h1>Registro de Estudante</h1>
       <form>
         <div class="form-group">
-          <label>Student Name</label>
-          <input type="text" [(ngModel)]="stname" [ngModelOptions]="{ standalone: true }" class="form-control" id="stname" placeholder="Enter Name">
+          <label>Nome</label>
+          <input type="text" [(ngModel)]="stname" [ngModelOptions]="{ standalone: true }" class="form-control" id="stname" placeholder="Nome do Aluno">
         </div>
   
         <div class="form-group">
-          <label>Course</label>
-          <input type="text" [(ngModel)]="course" [ngModelOptions]="{ standalone: true }" class="form-control" id="course" placeholder="Enter Course">
+          <label>Curso</label>
+          <input type="text" [(ngModel)]="course" [ngModelOptions]="{ standalone: true }" class="form-control" id="course" placeholder="Curso">
         </div>
   
         <div class="form-group">
-          <label>Fee</label>
-          <input type="text" [(ngModel)]="fee" [ngModelOptions]="{ standalone: true }" class="form-control" id="fee" placeholder="Enter Fee">
+          <label>Taxa</label>
+          <input type="text" [(ngModel)]="fee" [ngModelOptions]="{ standalone: true }" class="form-control" id="fee" placeholder="Taxa">
         </div>
   
-        <button type="submit" class="btn btn-primary mt-4" (click)="save()">Save</button>
-        <button type="submit" class="btn btn-secondary mt-4" routerLink="/listar">Listar</button>
+        <button type="submit" class="btn btn-primary mt-3 mb-3" (click)="save()">Salvar</button>
+        <button type="submit" class="btn btn-secondary mt-3 mb-3" routerLink="/listar">Listar</button>
       </form>
     </div>
 
