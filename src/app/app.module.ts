@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudencrudComponent } from './studentcrud/studentcrud.component';
+import { StudencrudComponent } from './components/studentcrud/studentcrud.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListStudentsComponent } from './components/list-students/list-students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudencrudComponent
+    StudencrudComponent,
+    ListStudentsComponent
   ],
   imports: [
     BrowserModule,
