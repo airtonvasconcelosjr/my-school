@@ -42,38 +42,17 @@ export class StudencrudComponent {
       console.log(resultData);
       alert("Student Registered Successfully");
       this.getAllStudent();
-    });
-  }
-
-  setUpdate(data: any) {
-    this.stname = data.stname;
-    this.course = data.course;
-    this.fee = data.fee;
-    this.currentStudentID = data.id;
-  }
-
-  updateRecords() {
-    let bodyData = {
-      stname: this.stname,
-      course: this.course,
-      fee: this.fee,
-    };
-
-    this.http.put("http://localhost:8085/api/student/update" + "/" + this.currentStudentID, bodyData).subscribe((resultData: any) => {
-      console.log(resultData);
-      alert("Student Updated Successfully");
-      this.getAllStudent();
       window.location.reload();
     });
   }
 
+
   save() {
     if (this.currentStudentID === '') {
       this.register();
-    } else {
-      this.updateRecords();
-    }
+      window.location.reload();
   }
+}
 
   setDelete(data: any) {
     this.http.delete("http://localhost:8085/api/student/delete" + "/" + data.id).subscribe((resultData: any) => {
@@ -84,4 +63,3 @@ export class StudencrudComponent {
   }
 }
 
-export class StudencrudModule {}
