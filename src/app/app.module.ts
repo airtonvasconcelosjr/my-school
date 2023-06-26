@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StudencrudComponent } from './components/studentcrud/studentcrud.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListStudentsComponent } from './components/list-students/list-students.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,8 @@ import { ListStudentsComponent } from './components/list-students/list-students.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
-  
+    HttpClientModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

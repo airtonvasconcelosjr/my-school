@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 @Component({
   selector: 'app-list-students',
   templateUrl: './list-students.component.html',
-  styleUrls: ['./list-students.component.css']
+  styleUrls: ['./list-students.component.css'],
 })
 export class ListStudentsComponent {
   StudentArray: any[] = [];
