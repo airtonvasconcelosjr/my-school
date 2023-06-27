@@ -25,9 +25,10 @@
   button {
     width: 40%;
   }
-
-  td{
-    opacity: 0;
+  
+  .editInputs.text-center {
+    display: flex;
+    justify-content: center;
   }
 
 
