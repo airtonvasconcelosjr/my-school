@@ -6,7 +6,7 @@
 }
 
 .card {
-  margin-top: 5rem;
+  margin: 5rem 15rem;
   justify-content: center;
   align-items: center;
   text-align: left;
@@ -17,3 +17,8 @@ button {
   padding: 5px 30px;
 }
 
+@media (max-width: 990px) {
+  .card{
+    margin: 5rem 2rem;
+  }
+}
